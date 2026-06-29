@@ -230,6 +230,52 @@ h1 {
   color: var(--color-muted);
 }
 
+.flow-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.flow-card {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: oklch(1 0 0);
+  padding: 1rem;
+}
+
+.flow-card h3 {
+  margin: 0.35rem 0 0.55rem;
+  text-wrap: balance;
+}
+
+.flow-card p {
+  margin: 0.25rem 0;
+  color: var(--color-muted);
+}
+
+.chip {
+  margin: 0;
+  display: inline-block;
+  border: 1px solid oklch(0.78 0.04 112);
+  color: var(--color-accent);
+  border-radius: 999px;
+  padding: 0.15rem 0.55rem;
+  font-size: 0.82rem;
+  font-weight: 700;
+  background: oklch(0.97 0.01 112);
+}
+
+.prompt-box {
+  margin-top: 0.65rem;
+  padding: 0.7rem 0.8rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border);
+  background: oklch(0.985 0.003 112);
+  color: oklch(0.28 0.014 112);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+  font-size: 0.86rem;
+  line-height: 1.5;
+}
+
 .media-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
