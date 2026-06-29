@@ -1,0 +1,25 @@
+RE&F AI Workshop Runbook (90 minutes)
+
+0-10 min | Opening
+- Explain goal: not "watching a demo", but "finishing tasks together".
+- Share expected outcomes: speed, quality, confidence.
+
+10-30 min | Demo 1: Information Structuring
+- Input: scattered notes / updates
+- Output: structured summary with clear headings and actions
+- Group practice: participants redo with their own sample
+
+30-55 min | Demo 2: Content Generation and Rewrite
+- Input: rough message / report draft
+- Output: audience-specific email / briefing note
+- Group practice: iterate prompt with role + tone + constraints
+
+55-80 min | Demo 3: Workflow Reuse
+- Combine outputs from demo 1 and 2
+- Turn repeated steps into a reusable checklist/template
+- Group practice: each participant writes one personal workflow
+
+80-90 min | Wrap-up
+- Ask each participant to commit one real task for next week
+- Share where to access this page and download package
+

@@ -1,0 +1,30 @@
+Demo 1 - Information Structuring
+You are my work assistant. Convert the following raw notes into:
+1) one-paragraph executive summary
+2) key points (max 5)
+3) risks/blockers
+4) next actions with owners
+Keep it concise and meeting-ready.
+
+---
+
+Demo 2 - Content Rewrite
+Rewrite the text below into a message for [target audience].
+Tone: professional and clear.
+Constraints:
+- max 180 words
+- include one concrete ask
+- include one deadline
+Source text:
+[paste source]
+
+---
+
+Demo 3 - Reusable Workflow
+Based on the outputs from Demo 1 and Demo 2, build a reusable workflow template:
+1) required inputs
+2) prompt structure
+3) quality checklist
+4) handoff format
+Return as a simple template that colleagues can copy directly.
+
