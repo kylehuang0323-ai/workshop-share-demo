@@ -230,6 +230,32 @@ h1 {
   color: var(--color-muted);
 }
 
+.media-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+.media-card {
+  margin: 0;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: oklch(1 0 0);
+  overflow: hidden;
+}
+
+.media-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.media-card figcaption {
+  padding: 0.65rem 0.8rem;
+  color: var(--color-muted);
+  font-weight: 600;
+}
+
 .tag {
   margin-top: 0.8rem !important;
   display: inline-block;
