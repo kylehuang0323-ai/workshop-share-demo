@@ -1,4 +1,4 @@
-RE&F AI Workshop Runbook (90 minutes)
+AI Workshop Runbook (90 minutes)
 
 0-10 min | Opening
 - Explain goal: not "watching a demo", but "finishing tasks together".
@@ -22,4 +22,3 @@ RE&F AI Workshop Runbook (90 minutes)
 80-90 min | Wrap-up
 - Ask each participant to commit one real task for next week
 - Share where to access this page and download package
-
