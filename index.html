@@ -62,6 +62,13 @@
             <p><code>prediction.csv</code><span data-i18n="demo1_output_detail">（id, type, severity, theme, lang）+ 分类分布摘要</span></p>
             <p><strong data-i18n="label_capability">考察能力</strong></p>
             <p data-i18n="demo1_capability">中英双语多标签分类、模糊语义判断、文件输出。</p>
+            <p><strong data-i18n="label_skills">推荐 Skills</strong></p>
+            <ul class="skill-list">
+              <li><code>csv-ingestion</code><span data-i18n="demo1_skill_1">：读取并校验 feedback.csv（编码、空值、异常行）</span></li>
+              <li><code>feedback-classifier</code><span data-i18n="demo1_skill_2">：按 type / severity / theme / lang 四标签批量分类</span></li>
+              <li><code>issue-summarizer</code><span data-i18n="demo1_skill_3">：输出分类统计、Top 问题和建议动作</span></li>
+              <li><code>dashboard-builder</code><span data-i18n="demo1_skill_4">：将 prediction.csv 渲染为 HTML 可视化看板（可选）</span></li>
+            </ul>
           </article>
           <article class="flow-card">
             <p class="chip" data-i18n="label_basic">简易</p>
@@ -85,6 +92,13 @@
             <p><code>report-engineers.md</code> / <code>report-leadership.md</code> / <code>report-team.md</code></p>
             <p><strong data-i18n="label_capability">考察能力</strong></p>
             <p data-i18n="demo2_capability">Multi-agent 编排、受众感知写作、一次性流程沉淀为可复用技能。</p>
+            <p><strong data-i18n="label_skills">推荐 Skills</strong></p>
+            <ul class="skill-list">
+              <li><code>workiq-sync</code><span data-i18n="demo2_skill_1">：抓取 Outlook / Teams 重点信息并统一字段</span></li>
+              <li><code>ado-fetcher</code><span data-i18n="demo2_skill_2">：拉取 Sprint、work items、PR 并生成周摘要底稿</span></li>
+              <li><code>audience-adapter</code><span data-i18n="demo2_skill_3">：针对 Engineers / Leadership / Team 生成三版叙事框架</span></li>
+              <li><code>report-reviewer</code><span data-i18n="demo2_skill_4">：检查三份周报一致性并给出高管摘要</span></li>
+            </ul>
           </article>
           <article class="flow-card">
             <p class="chip" data-i18n="label_basic">简易</p>
@@ -100,7 +114,16 @@
       <div class="container">
         <h2 data-i18n="demo3_title">演示 3 · 流程沉淀为可复用 Skill</h2>
         <p class="section-intro" data-i18n="demo3_intro">把“本次跑通”的多 Agent 周报流程，沉淀成下次可一键复用的技能定义文件。</p>
-        <div class="flow-list">
+        <div class="info-grid">
+          <article class="demo-card">
+            <p><strong data-i18n="label_skills">推荐 Skills</strong></p>
+            <ul class="skill-list">
+              <li><code>skill-scaffold-generator</code><span data-i18n="demo3_skill_1">：按固定模板创建 SKILL.md 骨架</span></li>
+              <li><code>skill-input-checker</code><span data-i18n="demo3_skill_2">：校验必需输入文件、参数和命名规范</span></li>
+              <li><code>skill-runbook-writer</code><span data-i18n="demo3_skill_3">：自动生成步骤说明与示例调用</span></li>
+              <li><code>skill-validator</code><span data-i18n="demo3_skill_4">：检查触发场景、步骤编号与输出约定是否完整</span></li>
+            </ul>
+          </article>
           <article class="flow-card">
             <p class="chip" data-i18n="label_advanced">进阶</p>
             <div class="prompt-box" data-i18n="demo3_prompt_advanced">Now convert the weekly reporting workflow into a reusable skill named weekly-report-generator. Generate SKILL.md with trigger scenarios, required inputs, numbered multi-agent steps, output file naming conventions, and one runnable example. Save it to .skills/weekly-report-generator/SKILL.md.</div>
@@ -192,7 +215,12 @@
         label_output: "输出",
         demo1_output_detail: "（id, type, severity, theme, lang）+ 分类分布摘要",
         label_capability: "考察能力",
+        label_skills: "推荐 Skills",
         demo1_capability: "中英双语多标签分类、模糊语义判断、文件输出。",
+        demo1_skill_1: "：读取并校验 feedback.csv（编码、空值、异常行）",
+        demo1_skill_2: "：按 type / severity / theme / lang 四标签批量分类",
+        demo1_skill_3: "：输出分类统计、Top 问题和建议动作",
+        demo1_skill_4: "：将 prediction.csv 渲染为 HTML 可视化看板（可选）",
         label_basic: "简易",
         demo1_prompt_basic: "读取 feedback.csv（产品 300 条用户反馈，中英混合）。请按 type、severity、theme、lang 分类，并保存为 prediction.csv（列：id, type, severity, theme, lang），最后给出简短摘要。",
         label_advanced: "进阶",
@@ -202,10 +230,18 @@
         label_input_files: "输入文件",
         label_output_files: "输出文件",
         demo2_capability: "Multi-agent 编排、受众感知写作、一次性流程沉淀为可复用技能。",
+        demo2_skill_1: "：抓取 Outlook / Teams 重点信息并统一字段",
+        demo2_skill_2: "：拉取 Sprint、work items、PR 并生成周摘要底稿",
+        demo2_skill_3: "：针对 Engineers / Leadership / Team 生成三版叙事框架",
+        demo2_skill_4: "：检查三份周报一致性并给出高管摘要",
         demo2_prompt_basic: "基于本周 work items、邮件摘要、会议纪要和团队亮点，生成一份精简 report.md，覆盖上线内容、关键决策、风险与团队亮点。",
         demo2_prompt_advanced: "编排一个 multi-agent 流程：1 个 Analyzer 读取 4 个 JSON 输入并产出结构化周摘要；3 个 Writer 并行生成 report-engineers.md、report-leadership.md、report-team.md；1 个 Reviewer 输出 5 行高管摘要并指出三份报告的不一致项。",
         demo3_title: "演示 3 · 流程沉淀为可复用 Skill",
         demo3_intro: "把“本次跑通”的多 Agent 周报流程，沉淀成下次可一键复用的技能定义文件。",
+        demo3_skill_1: "：按固定模板创建 SKILL.md 骨架",
+        demo3_skill_2: "：校验必需输入文件、参数和命名规范",
+        demo3_skill_3: "：自动生成步骤说明与示例调用",
+        demo3_skill_4: "：检查触发场景、步骤编号与输出约定是否完整",
         demo3_prompt_advanced: "将周报流程沉淀为可复用技能 weekly-report-generator。请生成 SKILL.md，包含触发场景、必需输入、编号流程步骤、输出命名规则与可运行示例，并保存到 .skills/weekly-report-generator/SKILL.md。",
         tracks_title: "进阶赛道（3 选 1）",
         tracks_intro: "三条赛道分别锻炼：证据化问答、长文结构化、演示表达压缩。可按团队角色自由选题。",
@@ -254,7 +290,12 @@
         label_output: "Output",
         demo1_output_detail: " (id, type, severity, theme, lang) + summary distribution",
         label_capability: "Capability Focus",
+        label_skills: "Recommended Skills",
         demo1_capability: "Bilingual multi-label classification, ambiguous-language judgment, and file output.",
+        demo1_skill_1: ": Read and validate feedback.csv (encoding, nulls, malformed rows)",
+        demo1_skill_2: ": Batch classify with type / severity / theme / lang labels",
+        demo1_skill_3: ": Produce distribution summary, top issues, and suggested actions",
+        demo1_skill_4: ": Render prediction.csv into an HTML dashboard (optional)",
         label_basic: "Basic",
         demo1_prompt_basic: "Read feedback.csv (300 user feedback rows for a product, mixed English and Chinese). Classify each row by type, severity, theme, and lang. Save to prediction.csv with columns id, type, severity, theme, lang, then give a short summary.",
         label_advanced: "Advanced",
@@ -264,10 +305,18 @@
         label_input_files: "Input Files",
         label_output_files: "Output Files",
         demo2_capability: "Multi-agent orchestration, audience-aware writing, and turning one-off flow into reusable capability.",
+        demo2_skill_1: ": Ingest Outlook/Teams highlights and normalize fields",
+        demo2_skill_2: ": Pull Sprint/work items/PRs and build the weekly source draft",
+        demo2_skill_3: ": Generate audience-specific framing for Engineers / Leadership / Team",
+        demo2_skill_4: ": Review cross-report consistency and output exec summary",
         demo2_prompt_basic: "Using this week's work items, email summaries, meeting notes, and team highlights, generate a concise report.md covering releases, key decisions, risks, and team wins.",
         demo2_prompt_advanced: "Orchestrate a multi-agent workflow: one Analyzer agent reads the 4 input JSON files and creates a structured weekly summary; three Writer agents produce report-engineers.md, report-leadership.md, and report-team.md in parallel; one Reviewer agent outputs a 5-line executive summary and flags inconsistencies across the 3 reports.",
         demo3_title: "Demo 3 · Turn the Workflow into a Reusable Skill",
         demo3_intro: "Convert the working multi-agent weekly report flow into a skill definition file so it can be rerun with one command next time.",
+        demo3_skill_1: ": Create a SKILL.md scaffold from a standard template",
+        demo3_skill_2: ": Validate required inputs, parameters, and naming conventions",
+        demo3_skill_3: ": Auto-generate step-by-step runbook and sample invocation",
+        demo3_skill_4: ": Check trigger coverage, numbered steps, and output completeness",
         demo3_prompt_advanced: "Now convert the weekly reporting workflow into a reusable skill named weekly-report-generator. Generate SKILL.md with trigger scenarios, required inputs, numbered multi-agent steps, output file naming conventions, and one runnable example. Save it to .skills/weekly-report-generator/SKILL.md.",
         tracks_title: "Advanced Tracks (Choose 1 of 3)",
         tracks_intro: "The three tracks focus on evidence-grounded QA, long-form structuring, and presentation compression. Pick based on team role.",
