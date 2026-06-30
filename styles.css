@@ -230,6 +230,13 @@ h1 {
   color: var(--color-muted);
 }
 
+.info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 1rem;
+  align-items: start;
+}
+
 .flow-list {
   display: grid;
   gap: 1rem;
@@ -274,6 +281,10 @@ h1 {
   font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
   font-size: 0.86rem;
   line-height: 1.5;
+}
+
+.flow-card .chip + .prompt-box {
+  margin-bottom: 0.75rem;
 }
 
 .media-grid {
@@ -383,7 +394,8 @@ button:focus-visible {
 
 @media (max-width: 880px) {
   .hero-grid,
-  .value-grid {
+  .value-grid,
+  .info-grid {
     grid-template-columns: 1fr;
   }
 

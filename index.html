@@ -3,22 +3,22 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AI Workshop Playbook</title>
-  <meta name="description" content="通用 AI Workshop 文字版演示页：按节奏跟做、复盘、复用。">
+  <title>工作坊演示 · 快速参考</title>
+  <meta name="description" content="团队内部工作坊演示页面：按 Demo 顺序展示输入、输出与简易/进阶 Prompt。">
   <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
   <header class="topbar">
     <div class="container topbar-inner">
-      <a class="brand" href="#top">AI Workshop Playbook</a>
+      <a class="brand" href="#top">Workshop Demos</a>
       <nav aria-label="主导航">
         <ul class="nav-list">
-          <li><a href="#overview">全局说明</a></li>
-          <li><a href="#demos">核心 Demo</a></li>
+          <li><a href="#demo1">Demo 1</a></li>
+          <li><a href="#demo2">Demo 2</a></li>
+          <li><a href="#demo3">Demo 3</a></li>
           <li><a href="#tracks">进阶赛道</a></li>
-          <li><a href="#workflow">带练节奏</a></li>
           <li><a href="#downloads">资料下载</a></li>
-          <li><a href="#contact">合作入口</a></li>
+          <li><a href="#contact">备注</a></li>
         </ul>
       </nav>
     </div>
@@ -28,81 +28,81 @@
     <section class="hero section">
       <div class="container hero-grid">
         <div>
-          <p class="kicker">通用 AI Workshop 分享页</p>
-          <h1>把“看演示”改成“能跟做”：可跨团队复用的文字版 Playbook</h1>
+          <p class="kicker">工作坊演示 · 快速参考</p>
+          <h1>按顺序带练：从一个 Prompt 到完整多 Agent 工作流</h1>
           <p class="lead">
-            本页面基于你提供的参考内容做了场景改写，用文字化方式呈现完整流程，避免与原页面一致，同时保留“可复制、可落地、可复盘”的节奏。
+            本页按团队内部分享使用场景重排为文字版手册：每个 Demo 都包含输入、输出、考察能力，以及可直接复制的简易 / 进阶 Prompt。
           </p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#overview">先看总览</a>
-            <a class="btn btn-ghost" href="#demos">进入 Demo</a>
+            <a class="btn btn-primary" href="#demo1">从 Demo 1 开始</a>
+            <a class="btn btn-ghost" href="#downloads">下载资料</a>
           </div>
         </div>
         <aside class="hero-panel" aria-label="关键信息">
-          <h2>本版改写原则</h2>
+          <h2>演示说明</h2>
           <ul>
-            <li>全部改成文字化表达，不使用截图铺陈</li>
-            <li>任务目标贴近日常跨团队协作场景</li>
-            <li>保留“简易/进阶”双层带练入口</li>
+            <li>建议 Prompt 保持英文，兼容性更稳定</li>
+            <li>每题先跑简易版，再跑进阶版</li>
+            <li>目标是“现场出结果”，不是只看流程</li>
           </ul>
         </aside>
       </div>
     </section>
 
-    <section id="overview" class="section">
+    <section id="demo1" class="section section-surface">
       <div class="container">
-        <h2>全局说明：这场分享会带大家完成什么</h2>
-        <p class="section-intro">先完成 3 个核心 Demo（分类、周报、多 Agent 沉淀），再选 1 条进阶赛道（视频问答 / 博客 / 演示文稿）。每一步都给“可直接复制”的 Prompt 模板。</p>
-        <div class="demo-grid">
+        <h2>演示 1 · 用户反馈智能分类</h2>
+        <p class="section-intro">中英混合反馈分流任务：给 300 条反馈打上类型、严重程度、主题、语言标签，并输出结构化 CSV。</p>
+        <div class="info-grid">
           <article class="demo-card">
-            <h3>阶段 1：快速建立信心</h3>
-            <p>通过一个中英混合的真实分流任务，让参与者 10-15 分钟内拿到第一份高质量输出。</p>
-            <p class="tag">关键词：结构化输出</p>
+            <p><strong>输入</strong></p>
+            <p>`feedback.csv`（两列：id / feedback）</p>
+            <p><strong>输出</strong></p>
+            <p>`prediction.csv`（id, type, severity, theme, lang）+ 分类分布摘要</p>
+            <p><strong>考察能力</strong></p>
+            <p>中英双语多标签分类、模糊语义判断、文件输出。</p>
           </article>
-          <article class="demo-card">
-            <h3>阶段 2：扩展到团队协作</h3>
-            <p>同一份输入数据，输出 3 份面向不同受众的内容，体现 Agent 编排的业务价值。</p>
-            <p class="tag">关键词：多受众写作</p>
-          </article>
-          <article class="demo-card">
-            <h3>阶段 3：沉淀可复用能力</h3>
-            <p>把一次性 Prompt 进化为可重复调用的 Skill，解决“会演示但难复现”的痛点。</p>
-            <p class="tag">关键词：资产化</p>
-          </article>
-          <article class="demo-card">
-            <h3>阶段 4：按角色选择进阶赛道</h3>
-            <p>根据团队职责进入视频问答、技术博客或 PPT 赛道，形成“当天能产出”的闭环。</p>
-            <p class="tag">关键词：角色适配</p>
+          <article class="flow-card">
+            <p class="chip">简易</p>
+            <div class="prompt-box">Read feedback.csv (300 user feedback rows for a product, mixed English and Chinese). Classify each row by type, severity, theme, and lang. Save to prediction.csv with columns id, type, severity, theme, lang, then give a short summary.</div>
+            <p class="chip">进阶</p>
+            <div class="prompt-box">I have 300 mixed-language feedback entries in feedback.csv. Classify each item by type (bug / feature_request / complaint / praise / question), severity (critical / high / medium / low), theme (UI/UX / performance / billing / onboarding / functionality / documentation), and lang (en / zh). Save as prediction.csv and summarize count, type/severity distribution, and hard-to-classify cases.</div>
           </article>
         </div>
       </div>
     </section>
 
-    <section id="demos" class="section section-surface">
+    <section id="demo2" class="section">
       <div class="container">
-        <h2>核心 Demo（文字版）</h2>
-        <p class="section-intro">以下内容按原始顺序重组为文字版任务卡，已替换成通用业务场景用语。</p>
+        <h2>演示 2 · 周报生成（多 Agent）</h2>
+        <p class="section-intro">同源数据输出三份不同受众周报：工程、管理、全员。重点是角色拆分与并行写作。</p>
+        <div class="info-grid">
+          <article class="demo-card">
+            <p><strong>输入文件</strong></p>
+            <p>`mock-ado-workitems.json` / `mock-emails.json` / `mock-meetings.json` / `mock-teams-messages.json`</p>
+            <p><strong>输出文件</strong></p>
+            <p>`report-engineers.md` / `report-leadership.md` / `report-team.md`</p>
+            <p><strong>考察能力</strong></p>
+            <p>Multi-agent 编排、受众感知写作、一次性流程沉淀为可复用技能。</p>
+          </article>
+          <article class="flow-card">
+            <p class="chip">简易</p>
+            <div class="prompt-box">Using this week's work items, email summaries, meeting notes, and team highlights, generate a concise report.md covering releases, key decisions, risks, and team wins.</div>
+            <p class="chip">进阶</p>
+            <div class="prompt-box">Orchestrate a multi-agent workflow: one Analyzer agent reads the 4 input JSON files and creates a structured weekly summary; three Writer agents produce report-engineers.md, report-leadership.md, and report-team.md in parallel; one Reviewer agent outputs a 5-line executive summary and flags inconsistencies across the 3 reports.</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="demo3" class="section section-surface">
+      <div class="container">
+        <h2>演示 3 · 流程沉淀为可复用 Skill</h2>
+        <p class="section-intro">把“本次跑通”的多 Agent 周报流程，沉淀成下次可一键复用的技能定义文件。</p>
         <div class="flow-list">
           <article class="flow-card">
-            <p class="chip">Demo 1</p>
-            <h3>用户反馈智能分类（中英混合）</h3>
-            <p><strong>目标：</strong>把 300 条反馈打上 type / severity / theme / lang 四类标签，并导出 CSV。</p>
-            <p><strong>输入：</strong>`feedback.csv`（中英混合、长度不一）。<strong>输出：</strong>`prediction.csv` + 分布摘要。</p>
-            <div class="prompt-box">Read feedback.csv and classify each row by type, severity, theme and lang. Save to prediction.csv and provide a short summary with distribution and hard-to-classify cases.</div>
-          </article>
-          <article class="flow-card">
-            <p class="chip">Demo 2</p>
-            <h3>多受众周报生成（多 Agent）</h3>
-            <p><strong>目标：</strong>同源数据生成工程版、管理版、团队版 3 份周报。</p>
-            <p><strong>输入：</strong>工单、邮件、会议、Teams 四类 JSON。<strong>输出：</strong>3 份 Markdown 报告。</p>
-            <div class="prompt-box">Orchestrate analyzer + 3 writer agents to produce report-engineers.md, report-leadership.md and report-team.md from the same weekly source files.</div>
-          </article>
-          <article class="flow-card">
-            <p class="chip">Demo 3</p>
-            <h3>把流程沉淀成可复用 Skill</h3>
-            <p><strong>目标：</strong>将多 Agent 周报流程沉淀为 `weekly-report-generator`，下周可一键复跑。</p>
-            <p><strong>输入：</strong>4 个数据文件或一个目录。<strong>输出：</strong>`.skills/weekly-report-generator/SKILL.md`。</p>
-            <div class="prompt-box">Generate SKILL.md for a reusable weekly-report-generator with trigger rules, required inputs, workflow steps and expected outputs.</div>
+            <p class="chip">进阶</p>
+            <div class="prompt-box">Now convert the weekly reporting workflow into a reusable skill named weekly-report-generator. Generate SKILL.md with trigger scenarios, required inputs, numbered multi-agent steps, output file naming conventions, and one runnable example. Save it to .skills/weekly-report-generator/SKILL.md.</div>
           </article>
         </div>
       </div>
@@ -111,69 +111,22 @@
     <section id="tracks" class="section">
       <div class="container">
         <h2>进阶赛道（3 选 1）</h2>
-        <p class="section-intro">按角色挑选赛道：问答分析、知识沉淀、汇报表达。避免“学完但不会用”的断层。</p>
+        <p class="section-intro">三条赛道分别锻炼：证据化问答、长文结构化、演示表达压缩。可按团队角色自由选题。</p>
         <div class="demo-grid">
           <article class="demo-card">
             <h3>赛道 A：视频问答</h3>
-            <p>从视频中抽取证据，按严格 JSON 输出答案、关键点、时间戳与置信度，控制幻觉。</p>
-            <p class="tag">适合：分析型角色</p>
+            <p>输入视频 + 问题，输出带时间戳证据的严格 JSON（answer / evidence / confidence / reasoning）。</p>
+            <p class="tag">能力：证据约束与防幻觉</p>
           </article>
           <article class="demo-card">
             <h3>赛道 B：视频转技术博客</h3>
-            <p>把视频内容压缩为结构化 HTML 博客，带 TL;DR、章节、关键帧与时间戳引用。</p>
-            <p class="tag">适合：知识运营/文档负责人</p>
+            <p>输出自包含 blog.html，含 TL;DR、3+ 章节、2+ 关键帧图片和时间戳引用。</p>
+            <p class="tag">能力：长文组织与视觉压缩</p>
           </article>
           <article class="demo-card">
             <h3>赛道 C：视频转汇报 PPT</h3>
-            <p>输出 5-7 页演示稿，包含对比/流程类版式、关键帧素材和演讲备注。</p>
-            <p class="tag">适合：分享者/项目经理</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="value" class="section section-surface">
-      <div class="container value-grid">
-        <div>
-          <h2>这套节奏为什么适合跨团队推广</h2>
-          <p>它覆盖了常见三类工作：信息分流、跨角色沟通、结构化汇报，且每一类都有可复跑模板。</p>
-        </div>
-        <dl>
-          <div>
-            <dt>可见收益</dt>
-            <dd>每位参与者都能在现场得到一份可用产出</dd>
-          </div>
-          <div>
-            <dt>会后复现</dt>
-            <dd>带走 Prompt 与模板，1 周内可在真实任务复做</dd>
-          </div>
-          <div>
-            <dt>组织层价值</dt>
-            <dd>把“个人经验”转成“团队可共享资产”</dd>
-          </div>
-        </dl>
-      </div>
-    </section>
-
-    <section id="workflow" class="section">
-      <div class="container">
-        <h2>90 分钟带练节奏</h2>
-        <div class="workflow">
-          <article>
-            <h3>1. 10 分钟：统一目标</h3>
-            <p>先定义“本场要拿到什么产出”，再开始操作，避免偏离目标。</p>
-          </article>
-          <article>
-            <h3>2. 55 分钟：3 个核心 Demo</h3>
-            <p>你演示一轮，参与者复做一轮，确保不是“只看不练”。</p>
-          </article>
-          <article>
-            <h3>3. 20 分钟：进阶赛道冲刺</h3>
-            <p>按角色分组，快速完成 A/B/C 赛道中的一个落地产物。</p>
-          </article>
-          <article>
-            <h3>4. 5 分钟：复盘承诺</h3>
-            <p>每人承诺一个“下周必用”任务，把学习转化为行动。</p>
+            <p>输出 5-7 页 summary.pptx，要求统一配色、非纯文字版式、关键帧素材与演讲备注。</p>
+            <p class="tag">能力：信息提炼与表达</p>
           </article>
         </div>
       </div>
@@ -182,11 +135,11 @@
     <section id="downloads" class="section section-surface">
       <div class="container">
         <h2>资料下载包</h2>
-        <p class="section-intro">建议会前统一发放，现场只讲“怎么做”，不花时间找素材。</p>
+        <p class="section-intro">可先用当前 starter 包演示；正式分享前可替换为你团队自己的 demo 输入文件。</p>
         <div class="demo-grid">
           <article class="demo-card">
             <h3>Workshop Starter ZIP</h3>
-            <p>包含流程说明、Prompt 模板、练习清单，开箱即用。</p>
+            <p>包含 runbook、prompt 模板、练习清单（通用版）。</p>
             <p class="tag"><a href="./downloads/workshop-starter.zip" download>下载 ZIP</a></p>
           </article>
           <article class="demo-card">
@@ -205,9 +158,9 @@
 
     <section id="contact" class="section">
       <div class="container cta">
-        <h2>需要我帮你把这版改成你团队专用吗？</h2>
-        <p>给我你的目标人群与 2-3 个典型任务，我可以在此基础上直接替换成你的业务语言与素材包。</p>
-        <a class="btn btn-primary" href="mailto:workshop-demo@example.com">预约分享沟通</a>
+        <h2>内部分享提示</h2>
+        <p>如果你要更贴合某个团队，建议只替换“输入文件名 + 输出文件名 + 进阶 Prompt”，其余排版结构保持不变，能确保整场节奏稳定。</p>
+        <a class="btn btn-primary" href="#demo1">回到 Demo 1</a>
       </div>
     </section>
   </main>
