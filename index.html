@@ -3,24 +3,25 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>工作坊演示 · 快速参考</title>
-  <meta name="description" content="团队内部工作坊演示页面：按 Demo 顺序展示输入、输出与简易/进阶 Prompt。">
+  <title id="pageTitle">工作坊演示 · 快速参考</title>
+  <meta id="pageDescription" name="description" content="团队内部工作坊演示页面：按 Demo 顺序展示输入、输出与简易/进阶 Prompt。">
   <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
   <header class="topbar">
     <div class="container topbar-inner">
       <a class="brand" href="#top">Workshop Demos</a>
-      <nav aria-label="主导航">
+      <nav data-i18n="nav_aria" data-i18n-attr="aria-label" aria-label="主导航">
         <ul class="nav-list">
           <li><a href="#demo1">Demo 1</a></li>
           <li><a href="#demo2">Demo 2</a></li>
           <li><a href="#demo3">Demo 3</a></li>
-          <li><a href="#tracks">进阶赛道</a></li>
-          <li><a href="#downloads">资料下载</a></li>
-          <li><a href="#contact">备注</a></li>
+          <li><a href="#tracks" data-i18n="nav_tracks">进阶赛道</a></li>
+          <li><a href="#downloads" data-i18n="nav_downloads">资料下载</a></li>
+          <li><a href="#contact" data-i18n="nav_notes">备注</a></li>
         </ul>
       </nav>
+      <button id="langToggle" class="lang-toggle" type="button" aria-live="polite">EN</button>
     </div>
   </header>
 
@@ -28,22 +29,22 @@
     <section class="hero section">
       <div class="container hero-grid">
         <div>
-          <p class="kicker">工作坊演示 · 快速参考</p>
-          <h1>按顺序带练：从一个 Prompt 到完整多 Agent 工作流</h1>
-          <p class="lead">
+          <p class="kicker" data-i18n="hero_kicker">工作坊演示 · 快速参考</p>
+          <h1 data-i18n="hero_title">按顺序带练：从一个 Prompt 到完整多 Agent 工作流</h1>
+          <p class="lead" data-i18n="hero_lead">
             本页按团队内部分享使用场景重排为文字版手册：每个 Demo 都包含输入、输出、考察能力，以及可直接复制的简易 / 进阶 Prompt。
           </p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#demo1">从 Demo 1 开始</a>
-            <a class="btn btn-ghost" href="#downloads">下载资料</a>
+            <a class="btn btn-primary" href="#demo1" data-i18n="hero_cta_start">从 Demo 1 开始</a>
+            <a class="btn btn-ghost" href="#downloads" data-i18n="hero_cta_download">下载资料</a>
           </div>
         </div>
-        <aside class="hero-panel" aria-label="关键信息">
-          <h2>演示说明</h2>
+        <aside class="hero-panel" data-i18n="hero_panel_aria" data-i18n-attr="aria-label" aria-label="关键信息">
+          <h2 data-i18n="hero_panel_title">演示说明</h2>
           <ul>
-            <li>建议 Prompt 保持英文，兼容性更稳定</li>
-            <li>每题先跑简易版，再跑进阶版</li>
-            <li>目标是“现场出结果”，不是只看流程</li>
+            <li data-i18n="hero_panel_1">建议 Prompt 保持英文，兼容性更稳定</li>
+            <li data-i18n="hero_panel_2">每题先跑简易版，再跑进阶版</li>
+            <li data-i18n="hero_panel_3">目标是“现场出结果”，不是只看流程</li>
           </ul>
         </aside>
       </div>
@@ -51,22 +52,22 @@
 
     <section id="demo1" class="section section-surface">
       <div class="container">
-        <h2>演示 1 · 用户反馈智能分类</h2>
-        <p class="section-intro">中英混合反馈分流任务：给 300 条反馈打上类型、严重程度、主题、语言标签，并输出结构化 CSV。</p>
+        <h2 data-i18n="demo1_title">演示 1 · 用户反馈智能分类</h2>
+        <p class="section-intro" data-i18n="demo1_intro">中英混合反馈分流任务：给 300 条反馈打上类型、严重程度、主题、语言标签，并输出结构化 CSV。</p>
         <div class="info-grid">
           <article class="demo-card">
-            <p><strong>输入</strong></p>
-            <p>`feedback.csv`（两列：id / feedback）</p>
-            <p><strong>输出</strong></p>
-            <p>`prediction.csv`（id, type, severity, theme, lang）+ 分类分布摘要</p>
-            <p><strong>考察能力</strong></p>
-            <p>中英双语多标签分类、模糊语义判断、文件输出。</p>
+            <p><strong data-i18n="label_input">输入</strong></p>
+            <p><code>feedback.csv</code><span data-i18n="demo1_input_detail">（两列：id / feedback）</span></p>
+            <p><strong data-i18n="label_output">输出</strong></p>
+            <p><code>prediction.csv</code><span data-i18n="demo1_output_detail">（id, type, severity, theme, lang）+ 分类分布摘要</span></p>
+            <p><strong data-i18n="label_capability">考察能力</strong></p>
+            <p data-i18n="demo1_capability">中英双语多标签分类、模糊语义判断、文件输出。</p>
           </article>
           <article class="flow-card">
-            <p class="chip">简易</p>
-            <div class="prompt-box">Read feedback.csv (300 user feedback rows for a product, mixed English and Chinese). Classify each row by type, severity, theme, and lang. Save to prediction.csv with columns id, type, severity, theme, lang, then give a short summary.</div>
-            <p class="chip">进阶</p>
-            <div class="prompt-box">I have 300 mixed-language feedback entries in feedback.csv. Classify each item by type (bug / feature_request / complaint / praise / question), severity (critical / high / medium / low), theme (UI/UX / performance / billing / onboarding / functionality / documentation), and lang (en / zh). Save as prediction.csv and summarize count, type/severity distribution, and hard-to-classify cases.</div>
+            <p class="chip" data-i18n="label_basic">简易</p>
+            <div class="prompt-box" data-i18n="demo1_prompt_basic">Read feedback.csv (300 user feedback rows for a product, mixed English and Chinese). Classify each row by type, severity, theme, and lang. Save to prediction.csv with columns id, type, severity, theme, lang, then give a short summary.</div>
+            <p class="chip" data-i18n="label_advanced">进阶</p>
+            <div class="prompt-box" data-i18n="demo1_prompt_advanced">I have 300 mixed-language feedback entries in feedback.csv. Classify each item by type (bug / feature_request / complaint / praise / question), severity (critical / high / medium / low), theme (UI/UX / performance / billing / onboarding / functionality / documentation), and lang (en / zh). Save as prediction.csv and summarize count, type/severity distribution, and hard-to-classify cases.</div>
           </article>
         </div>
       </div>
@@ -74,22 +75,22 @@
 
     <section id="demo2" class="section">
       <div class="container">
-        <h2>演示 2 · 周报生成（多 Agent）</h2>
-        <p class="section-intro">同源数据输出三份不同受众周报：工程、管理、全员。重点是角色拆分与并行写作。</p>
+        <h2 data-i18n="demo2_title">演示 2 · 周报生成（多 Agent）</h2>
+        <p class="section-intro" data-i18n="demo2_intro">同源数据输出三份不同受众周报：工程、管理、全员。重点是角色拆分与并行写作。</p>
         <div class="info-grid">
           <article class="demo-card">
-            <p><strong>输入文件</strong></p>
-            <p>`mock-ado-workitems.json` / `mock-emails.json` / `mock-meetings.json` / `mock-teams-messages.json`</p>
-            <p><strong>输出文件</strong></p>
-            <p>`report-engineers.md` / `report-leadership.md` / `report-team.md`</p>
-            <p><strong>考察能力</strong></p>
-            <p>Multi-agent 编排、受众感知写作、一次性流程沉淀为可复用技能。</p>
+            <p><strong data-i18n="label_input_files">输入文件</strong></p>
+            <p><code>mock-ado-workitems.json</code> / <code>mock-emails.json</code> / <code>mock-meetings.json</code> / <code>mock-teams-messages.json</code></p>
+            <p><strong data-i18n="label_output_files">输出文件</strong></p>
+            <p><code>report-engineers.md</code> / <code>report-leadership.md</code> / <code>report-team.md</code></p>
+            <p><strong data-i18n="label_capability">考察能力</strong></p>
+            <p data-i18n="demo2_capability">Multi-agent 编排、受众感知写作、一次性流程沉淀为可复用技能。</p>
           </article>
           <article class="flow-card">
-            <p class="chip">简易</p>
-            <div class="prompt-box">Using this week's work items, email summaries, meeting notes, and team highlights, generate a concise report.md covering releases, key decisions, risks, and team wins.</div>
-            <p class="chip">进阶</p>
-            <div class="prompt-box">Orchestrate a multi-agent workflow: one Analyzer agent reads the 4 input JSON files and creates a structured weekly summary; three Writer agents produce report-engineers.md, report-leadership.md, and report-team.md in parallel; one Reviewer agent outputs a 5-line executive summary and flags inconsistencies across the 3 reports.</div>
+            <p class="chip" data-i18n="label_basic">简易</p>
+            <div class="prompt-box" data-i18n="demo2_prompt_basic">Using this week's work items, email summaries, meeting notes, and team highlights, generate a concise report.md covering releases, key decisions, risks, and team wins.</div>
+            <p class="chip" data-i18n="label_advanced">进阶</p>
+            <div class="prompt-box" data-i18n="demo2_prompt_advanced">Orchestrate a multi-agent workflow: one Analyzer agent reads the 4 input JSON files and creates a structured weekly summary; three Writer agents produce report-engineers.md, report-leadership.md, and report-team.md in parallel; one Reviewer agent outputs a 5-line executive summary and flags inconsistencies across the 3 reports.</div>
           </article>
         </div>
       </div>
@@ -97,12 +98,12 @@
 
     <section id="demo3" class="section section-surface">
       <div class="container">
-        <h2>演示 3 · 流程沉淀为可复用 Skill</h2>
-        <p class="section-intro">把“本次跑通”的多 Agent 周报流程，沉淀成下次可一键复用的技能定义文件。</p>
+        <h2 data-i18n="demo3_title">演示 3 · 流程沉淀为可复用 Skill</h2>
+        <p class="section-intro" data-i18n="demo3_intro">把“本次跑通”的多 Agent 周报流程，沉淀成下次可一键复用的技能定义文件。</p>
         <div class="flow-list">
           <article class="flow-card">
-            <p class="chip">进阶</p>
-            <div class="prompt-box">Now convert the weekly reporting workflow into a reusable skill named weekly-report-generator. Generate SKILL.md with trigger scenarios, required inputs, numbered multi-agent steps, output file naming conventions, and one runnable example. Save it to .skills/weekly-report-generator/SKILL.md.</div>
+            <p class="chip" data-i18n="label_advanced">进阶</p>
+            <div class="prompt-box" data-i18n="demo3_prompt_advanced">Now convert the weekly reporting workflow into a reusable skill named weekly-report-generator. Generate SKILL.md with trigger scenarios, required inputs, numbered multi-agent steps, output file naming conventions, and one runnable example. Save it to .skills/weekly-report-generator/SKILL.md.</div>
           </article>
         </div>
       </div>
@@ -110,23 +111,23 @@
 
     <section id="tracks" class="section">
       <div class="container">
-        <h2>进阶赛道（3 选 1）</h2>
-        <p class="section-intro">三条赛道分别锻炼：证据化问答、长文结构化、演示表达压缩。可按团队角色自由选题。</p>
+        <h2 data-i18n="tracks_title">进阶赛道（3 选 1）</h2>
+        <p class="section-intro" data-i18n="tracks_intro">三条赛道分别锻炼：证据化问答、长文结构化、演示表达压缩。可按团队角色自由选题。</p>
         <div class="demo-grid">
           <article class="demo-card">
-            <h3>赛道 A：视频问答</h3>
-            <p>输入视频 + 问题，输出带时间戳证据的严格 JSON（answer / evidence / confidence / reasoning）。</p>
-            <p class="tag">能力：证据约束与防幻觉</p>
+            <h3 data-i18n="track_a_title">赛道 A：视频问答</h3>
+            <p data-i18n="track_a_desc">输入视频 + 问题，输出带时间戳证据的严格 JSON（answer / evidence / confidence / reasoning）。</p>
+            <p class="tag" data-i18n="track_a_tag">能力：证据约束与防幻觉</p>
           </article>
           <article class="demo-card">
-            <h3>赛道 B：视频转技术博客</h3>
-            <p>输出自包含 blog.html，含 TL;DR、3+ 章节、2+ 关键帧图片和时间戳引用。</p>
-            <p class="tag">能力：长文组织与视觉压缩</p>
+            <h3 data-i18n="track_b_title">赛道 B：视频转技术博客</h3>
+            <p data-i18n="track_b_desc">输出自包含 blog.html，含 TL;DR、3+ 章节、2+ 关键帧图片和时间戳引用。</p>
+            <p class="tag" data-i18n="track_b_tag">能力：长文组织与视觉压缩</p>
           </article>
           <article class="demo-card">
-            <h3>赛道 C：视频转汇报 PPT</h3>
-            <p>输出 5-7 页 summary.pptx，要求统一配色、非纯文字版式、关键帧素材与演讲备注。</p>
-            <p class="tag">能力：信息提炼与表达</p>
+            <h3 data-i18n="track_c_title">赛道 C：视频转汇报 PPT</h3>
+            <p data-i18n="track_c_desc">输出 5-7 页 summary.pptx，要求统一配色、非纯文字版式、关键帧素材与演讲备注。</p>
+            <p class="tag" data-i18n="track_c_tag">能力：信息提炼与表达</p>
           </article>
         </div>
       </div>
@@ -134,23 +135,23 @@
 
     <section id="downloads" class="section section-surface">
       <div class="container">
-        <h2>资料下载包</h2>
-        <p class="section-intro">可先用当前 starter 包演示；正式分享前可替换为你团队自己的 demo 输入文件。</p>
+        <h2 data-i18n="downloads_title">资料下载包</h2>
+        <p class="section-intro" data-i18n="downloads_intro">可先用当前 starter 包演示；正式分享前可替换为你团队自己的 demo 输入文件。</p>
         <div class="demo-grid">
           <article class="demo-card">
             <h3>Workshop Starter ZIP</h3>
-            <p>包含 runbook、prompt 模板、练习清单（通用版）。</p>
-            <p class="tag"><a href="./downloads/workshop-starter.zip" download>下载 ZIP</a></p>
+            <p data-i18n="downloads_zip_desc">包含 runbook、prompt 模板、练习清单（通用版）。</p>
+            <p class="tag"><a href="./downloads/workshop-starter.zip" download data-i18n="downloads_zip_btn">下载 ZIP</a></p>
           </article>
           <article class="demo-card">
             <h3>Runbook（文本版）</h3>
-            <p>主持人可直接照读的节奏脚本，减少临场压力。</p>
-            <p class="tag"><a href="./downloads/workshop-runbook.txt" download>下载 Runbook</a></p>
+            <p data-i18n="downloads_runbook_desc">主持人可直接照读的节奏脚本，减少临场压力。</p>
+            <p class="tag"><a href="./downloads/workshop-runbook.txt" download>Download Runbook</a></p>
           </article>
           <article class="demo-card">
-            <h3>Prompt 模板</h3>
-            <p>核心 Prompt 的可复制版本，方便会后按场景二次改写。</p>
-            <p class="tag"><a href="./downloads/demo-prompts.txt" download>下载模板</a></p>
+            <h3 data-i18n="downloads_prompt_title">Prompt 模板</h3>
+            <p data-i18n="downloads_prompt_desc">核心 Prompt 的可复制版本，方便会后按场景二次改写。</p>
+            <p class="tag"><a href="./downloads/demo-prompts.txt" download data-i18n="downloads_prompt_btn">下载模板</a></p>
           </article>
         </div>
       </div>
@@ -158,11 +159,175 @@
 
     <section id="contact" class="section">
       <div class="container cta">
-        <h2>内部分享提示</h2>
-        <p>如果你要更贴合某个团队，建议只替换“输入文件名 + 输出文件名 + 进阶 Prompt”，其余排版结构保持不变，能确保整场节奏稳定。</p>
-        <a class="btn btn-primary" href="#demo1">回到 Demo 1</a>
+        <h2 data-i18n="notes_title">内部分享提示</h2>
+        <p data-i18n="notes_desc">如果你要更贴合某个团队，建议只替换“输入文件名 + 输出文件名 + 进阶 Prompt”，其余排版结构保持不变，能确保整场节奏稳定。</p>
+        <a class="btn btn-primary" href="#demo1" data-i18n="notes_back_btn">回到 Demo 1</a>
       </div>
     </section>
   </main>
+
+  <script>
+    const I18N = {
+      zh: {
+        meta_title: "工作坊演示 · 快速参考",
+        meta_desc: "团队内部工作坊演示页面：按 Demo 顺序展示输入、输出与简易/进阶 Prompt。",
+        nav_aria: "主导航",
+        nav_tracks: "进阶赛道",
+        nav_downloads: "资料下载",
+        nav_notes: "备注",
+        hero_kicker: "工作坊演示 · 快速参考",
+        hero_title: "按顺序带练：从一个 Prompt 到完整多 Agent 工作流",
+        hero_lead: "本页按团队内部分享使用场景重排为文字版手册：每个 Demo 都包含输入、输出、考察能力，以及可直接复制的简易 / 进阶 Prompt。",
+        hero_cta_start: "从 Demo 1 开始",
+        hero_cta_download: "下载资料",
+        hero_panel_aria: "关键信息",
+        hero_panel_title: "演示说明",
+        hero_panel_1: "建议 Prompt 保持英文，兼容性更稳定",
+        hero_panel_2: "每题先跑简易版，再跑进阶版",
+        hero_panel_3: "目标是“现场出结果”，不是只看流程",
+        demo1_title: "演示 1 · 用户反馈智能分类",
+        demo1_intro: "中英混合反馈分流任务：给 300 条反馈打上类型、严重程度、主题、语言标签，并输出结构化 CSV。",
+        label_input: "输入",
+        demo1_input_detail: "（两列：id / feedback）",
+        label_output: "输出",
+        demo1_output_detail: "（id, type, severity, theme, lang）+ 分类分布摘要",
+        label_capability: "考察能力",
+        demo1_capability: "中英双语多标签分类、模糊语义判断、文件输出。",
+        label_basic: "简易",
+        demo1_prompt_basic: "读取 feedback.csv（产品 300 条用户反馈，中英混合）。请按 type、severity、theme、lang 分类，并保存为 prediction.csv（列：id, type, severity, theme, lang），最后给出简短摘要。",
+        label_advanced: "进阶",
+        demo1_prompt_advanced: "我有 300 条 mixed-language 反馈在 feedback.csv。请将每条按 type（bug / feature_request / complaint / praise / question）、severity（critical / high / medium / low）、theme（UI/UX / performance / billing / onboarding / functionality / documentation）、lang（en / zh）分类，保存为 prediction.csv，并总结总量、type/severity 分布及难分类样本。",
+        demo2_title: "演示 2 · 周报生成（多 Agent）",
+        demo2_intro: "同源数据输出三份不同受众周报：工程、管理、全员。重点是角色拆分与并行写作。",
+        label_input_files: "输入文件",
+        label_output_files: "输出文件",
+        demo2_capability: "Multi-agent 编排、受众感知写作、一次性流程沉淀为可复用技能。",
+        demo2_prompt_basic: "基于本周 work items、邮件摘要、会议纪要和团队亮点，生成一份精简 report.md，覆盖上线内容、关键决策、风险与团队亮点。",
+        demo2_prompt_advanced: "编排一个 multi-agent 流程：1 个 Analyzer 读取 4 个 JSON 输入并产出结构化周摘要；3 个 Writer 并行生成 report-engineers.md、report-leadership.md、report-team.md；1 个 Reviewer 输出 5 行高管摘要并指出三份报告的不一致项。",
+        demo3_title: "演示 3 · 流程沉淀为可复用 Skill",
+        demo3_intro: "把“本次跑通”的多 Agent 周报流程，沉淀成下次可一键复用的技能定义文件。",
+        demo3_prompt_advanced: "将周报流程沉淀为可复用技能 weekly-report-generator。请生成 SKILL.md，包含触发场景、必需输入、编号流程步骤、输出命名规则与可运行示例，并保存到 .skills/weekly-report-generator/SKILL.md。",
+        tracks_title: "进阶赛道（3 选 1）",
+        tracks_intro: "三条赛道分别锻炼：证据化问答、长文结构化、演示表达压缩。可按团队角色自由选题。",
+        track_a_title: "赛道 A：视频问答",
+        track_a_desc: "输入视频 + 问题，输出带时间戳证据的严格 JSON（answer / evidence / confidence / reasoning）。",
+        track_a_tag: "能力：证据约束与防幻觉",
+        track_b_title: "赛道 B：视频转技术博客",
+        track_b_desc: "输出自包含 blog.html，含 TL;DR、3+ 章节、2+ 关键帧图片和时间戳引用。",
+        track_b_tag: "能力：长文组织与视觉压缩",
+        track_c_title: "赛道 C：视频转汇报 PPT",
+        track_c_desc: "输出 5-7 页 summary.pptx，要求统一配色、非纯文字版式、关键帧素材与演讲备注。",
+        track_c_tag: "能力：信息提炼与表达",
+        downloads_title: "资料下载包",
+        downloads_intro: "可先用当前 starter 包演示；正式分享前可替换为你团队自己的 demo 输入文件。",
+        downloads_zip_desc: "包含 runbook、prompt 模板、练习清单（通用版）。",
+        downloads_zip_btn: "下载 ZIP",
+        downloads_runbook_desc: "主持人可直接照读的节奏脚本，减少临场压力。",
+        downloads_prompt_title: "Prompt 模板",
+        downloads_prompt_desc: "核心 Prompt 的可复制版本，方便会后按场景二次改写。",
+        downloads_prompt_btn: "下载模板",
+        notes_title: "内部分享提示",
+        notes_desc: "如果你要更贴合某个团队，建议只替换“输入文件名 + 输出文件名 + 进阶 Prompt”，其余排版结构保持不变，能确保整场节奏稳定。",
+        notes_back_btn: "回到 Demo 1"
+      },
+      en: {
+        meta_title: "Workshop Demos · Quick Reference",
+        meta_desc: "Internal workshop demo page: ordered demos with inputs, outputs, and basic/advanced prompts.",
+        nav_aria: "Main navigation",
+        nav_tracks: "Advanced Tracks",
+        nav_downloads: "Downloads",
+        nav_notes: "Notes",
+        hero_kicker: "Workshop Demos · Quick Reference",
+        hero_title: "Step-by-step facilitation: from one prompt to a full multi-agent workflow",
+        hero_lead: "This page is formatted as a text-first internal handbook. Each demo includes inputs, outputs, capabilities being tested, and copy-ready basic/advanced prompts.",
+        hero_cta_start: "Start from Demo 1",
+        hero_cta_download: "Download Materials",
+        hero_panel_aria: "Key information",
+        hero_panel_title: "Session Notes",
+        hero_panel_1: "Keep prompts in English for better model compatibility",
+        hero_panel_2: "Run the basic version first, then the advanced version",
+        hero_panel_3: "The goal is live output delivery, not passive walkthrough",
+        demo1_title: "Demo 1 · Intelligent User Feedback Classification",
+        demo1_intro: "A mixed Chinese-English triage task: classify 300 feedback items by type, severity, theme, and language, then export structured CSV output.",
+        label_input: "Input",
+        demo1_input_detail: " (2 columns: id / feedback)",
+        label_output: "Output",
+        demo1_output_detail: " (id, type, severity, theme, lang) + summary distribution",
+        label_capability: "Capability Focus",
+        demo1_capability: "Bilingual multi-label classification, ambiguous-language judgment, and file output.",
+        label_basic: "Basic",
+        demo1_prompt_basic: "Read feedback.csv (300 user feedback rows for a product, mixed English and Chinese). Classify each row by type, severity, theme, and lang. Save to prediction.csv with columns id, type, severity, theme, lang, then give a short summary.",
+        label_advanced: "Advanced",
+        demo1_prompt_advanced: "I have 300 mixed-language feedback entries in feedback.csv. Classify each item by type (bug / feature_request / complaint / praise / question), severity (critical / high / medium / low), theme (UI/UX / performance / billing / onboarding / functionality / documentation), and lang (en / zh). Save as prediction.csv and summarize count, type/severity distribution, and hard-to-classify cases.",
+        demo2_title: "Demo 2 · Weekly Report Generation (Multi-Agent)",
+        demo2_intro: "From the same source data, generate three reports for different audiences: engineering, leadership, and team-wide. Focus on role split and parallel writing.",
+        label_input_files: "Input Files",
+        label_output_files: "Output Files",
+        demo2_capability: "Multi-agent orchestration, audience-aware writing, and turning one-off flow into reusable capability.",
+        demo2_prompt_basic: "Using this week's work items, email summaries, meeting notes, and team highlights, generate a concise report.md covering releases, key decisions, risks, and team wins.",
+        demo2_prompt_advanced: "Orchestrate a multi-agent workflow: one Analyzer agent reads the 4 input JSON files and creates a structured weekly summary; three Writer agents produce report-engineers.md, report-leadership.md, and report-team.md in parallel; one Reviewer agent outputs a 5-line executive summary and flags inconsistencies across the 3 reports.",
+        demo3_title: "Demo 3 · Turn the Workflow into a Reusable Skill",
+        demo3_intro: "Convert the working multi-agent weekly report flow into a skill definition file so it can be rerun with one command next time.",
+        demo3_prompt_advanced: "Now convert the weekly reporting workflow into a reusable skill named weekly-report-generator. Generate SKILL.md with trigger scenarios, required inputs, numbered multi-agent steps, output file naming conventions, and one runnable example. Save it to .skills/weekly-report-generator/SKILL.md.",
+        tracks_title: "Advanced Tracks (Choose 1 of 3)",
+        tracks_intro: "The three tracks focus on evidence-grounded QA, long-form structuring, and presentation compression. Pick based on team role.",
+        track_a_title: "Track A: Video Q&A",
+        track_a_desc: "Input: video + questions. Output: strict JSON with timestamped evidence (answer / evidence / confidence / reasoning).",
+        track_a_tag: "Capability: evidence grounding and anti-hallucination",
+        track_b_title: "Track B: Video-to-HTML Tech Blog",
+        track_b_desc: "Output a self-contained blog.html with TL;DR, 3+ sections, 2+ keyframes, and timestamp citations.",
+        track_b_tag: "Capability: long-form organization and visual compression",
+        track_c_title: "Track C: Video-to-PPT Briefing",
+        track_c_desc: "Output a 5-7 slide summary.pptx with unified palette, non-bullet layouts, keyframes, and speaker notes.",
+        track_c_tag: "Capability: information distillation and communication",
+        downloads_title: "Download Pack",
+        downloads_intro: "You can use the current starter pack for demoing first, then replace with your own team-specific input files before the formal session.",
+        downloads_zip_desc: "Includes runbook, prompt templates, and practice checklist (generic version).",
+        downloads_zip_btn: "Download ZIP",
+        downloads_runbook_desc: "A read-aloud facilitation script that reduces live delivery pressure.",
+        downloads_prompt_title: "Prompt Templates",
+        downloads_prompt_desc: "Copy-ready core prompts, easy to adapt for post-session team scenarios.",
+        downloads_prompt_btn: "Download Templates",
+        notes_title: "Internal Sharing Tip",
+        notes_desc: "To adapt for a specific team, replace only input/output filenames and advanced prompts. Keep the layout unchanged to preserve facilitation rhythm.",
+        notes_back_btn: "Back to Demo 1"
+      }
+    };
+
+    const langToggle = document.getElementById("langToggle");
+    const titleEl = document.getElementById("pageTitle");
+    const descEl = document.getElementById("pageDescription");
+    const i18nEls = document.querySelectorAll("[data-i18n]");
+
+    function applyLang(lang) {
+      const dict = I18N[lang];
+      document.documentElement.lang = lang === "zh" ? "zh-CN" : "en";
+      titleEl.textContent = dict.meta_title;
+      descEl.setAttribute("content", dict.meta_desc);
+
+      i18nEls.forEach((el) => {
+        const key = el.getAttribute("data-i18n");
+        const value = dict[key];
+        if (!value) return;
+        const attr = el.getAttribute("data-i18n-attr");
+        if (attr) {
+          el.setAttribute(attr, value);
+        } else {
+          el.textContent = value;
+        }
+      });
+
+      langToggle.textContent = lang === "zh" ? "EN" : "中文";
+      localStorage.setItem("workshop-lang", lang);
+    }
+
+    const storedLang = localStorage.getItem("workshop-lang");
+    applyLang(storedLang === "en" ? "en" : "zh");
+
+    langToggle.addEventListener("click", () => {
+      const next = document.documentElement.lang.startsWith("zh") ? "en" : "zh";
+      applyLang(next);
+    });
+  </script>
 </body>
 </html>
